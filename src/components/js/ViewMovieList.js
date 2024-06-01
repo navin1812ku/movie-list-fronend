@@ -22,7 +22,7 @@ function ViewMovieList() {
                 console.log(res.data);
                 if (res.data.success) {
                     setMovieName(res.data.movieList.name);
-                    if (res.data.movieList.movies.length!=0) {
+                    if (res.data.movieList.movies.length!==0) {
                         setMovieList(res.data.movieList.movies);
                         setMovieAvailable(true);
                     }

@@ -28,7 +28,6 @@ function MovieList() {
                     else {
                         setErrorMessage("No movie added yet");
                     }
-                    console.log(movieName, movieList, isMovieAvailable);
                 }
                 else {
                     setMovieName(res.data.movieList.name);
