@@ -19,7 +19,7 @@ function ChangePassword() {
         }
         try {
             const token = localStorage.getItem('token');
-            const response=await axios.post('http://localhost:8081/userChangePasssword', {
+            const response=await axios.post('https://movie-list-backend-api-1812.onrender.com/userChangePasssword', {
                 newPassword
             }, {
                 headers: {

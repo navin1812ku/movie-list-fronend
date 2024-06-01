@@ -13,7 +13,7 @@ function Login() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post('http://localhost:8081/login', { email, password });
+            const res = await axios.post('https://movie-list-backend-api-1812.onrender.com/login', { email, password });
             if (res.data.message === "Login Successfully") {
                 localStorage.setItem('token', res.data.token);
                 navigate('/logined/landingPage');

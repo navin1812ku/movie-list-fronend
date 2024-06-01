@@ -11,7 +11,7 @@ function ForgetPassword() {
     const handleForgetPassword = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.get(`http://localhost:8081/isUserExists/${email}`);
+            const response = await axios.get(`https://movie-list-backend-api-1812.onrender.com/isUserExists/${email}`);
             if (response.data.userExists) {
                 setSuccessMessage("Password reset link sent to your email");
             } else {

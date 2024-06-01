@@ -12,7 +12,7 @@ function UserCanChangePassword() {
         e.preventDefault();
         try {
             const token = localStorage.getItem('token');
-            const response = await axios.post('http://localhost:8081/isUserCanChangePasssword', {
+            const response = await axios.post('https://movie-list-backend-api-1812.onrender.com/isUserCanChangePasssword', {
                 oldPassword
             }, {
                 headers: {
@@ -21,7 +21,7 @@ function UserCanChangePassword() {
             });
 
             if (response.data.isPasswordCorrect) {
-                navigate('/logined/changePassword'); // Navigate to ChangePassword component
+                navigate('/logined/changePassword'); 
             } else {
                 setErrorMessage("Password doesn't match");
             }

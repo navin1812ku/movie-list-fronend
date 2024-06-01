@@ -15,7 +15,7 @@ function SearchMovieList() {
         event.preventDefault(); // Prevent the default form submission
         try {
             const token = localStorage.getItem('token');
-            const response = await axios.get(`http://localhost:8081/searchMovieList/${searchQuery}`, {
+            const response = await axios.get(`https://movie-list-backend-api-1812.onrender.com/searchMovieList/${searchQuery}`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },

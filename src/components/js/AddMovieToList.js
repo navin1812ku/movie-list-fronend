@@ -16,7 +16,7 @@ function AddMovieToList() {
         const fetchMovieLists = async () => {
             try {
                 const token = localStorage.getItem('token');
-                const res = await axios.get('http://localhost:8081/allMoviesList', {
+                const res = await axios.get('https://movie-list-backend-api-1812.onrender.com/allMoviesList', {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
@@ -34,7 +34,7 @@ function AddMovieToList() {
         try {
             const JWTToken = localStorage.getItem('token');
             console.log(id, movieListId, JWTToken);
-            const list = await axios.post(`http://localhost:8081/movieLists/${id}/${movieListId}`, { token: JWTToken }, {
+            const list = await axios.post(`https://movie-list-backend-api-1812.onrender.com/${id}/${movieListId}`, { token: JWTToken }, {
                 headers: {
                     Authorization: `Bearer ${JWTToken}`,
                 },

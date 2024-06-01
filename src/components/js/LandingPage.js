@@ -12,7 +12,7 @@ function LandingPage() {
     const handleSearch = async (e) => {
         e.preventDefault();
         const token = localStorage.getItem('token');
-        const res = await axios.get(`http://localhost:8081/search/${query}`, {
+        const res = await axios.get(`https://movie-list-backend-api-1812.onrender.com/search/${query}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }

@@ -14,7 +14,7 @@ function Profile() {
         const fetchUserDetails = async () => {
             try {
                 const token = localStorage.getItem('token');
-                const res = await axios.get('http://localhost:8081/userDetails', {
+                const res = await axios.get('https://movie-list-backend-api-1812.onrender.com/userDetails', {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
@@ -28,7 +28,7 @@ function Profile() {
         const fetchMovieListDetails = async () => {
             try {
                 const token = localStorage.getItem('token');
-                const res = await axios.get('http://localhost:8081/allMoviesList', {
+                const res = await axios.get('https://movie-list-backend-api-1812.onrender.com/allMoviesList', {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },

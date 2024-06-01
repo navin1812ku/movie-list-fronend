@@ -19,7 +19,7 @@ function UserChangePasssword() {
             return;
         }
         try {
-            const response = await axios.post('http://localhost:8081/forgetPassword', {
+            const response = await axios.post('https://movie-list-backend-api-1812.onrender.com/forgetPassword', {
                 email,
                 newPassword
             });

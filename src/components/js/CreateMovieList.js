@@ -15,7 +15,7 @@ function CreateMovieList() {
         e.preventDefault();
         try {
             const token = localStorage.getItem('token');
-            const response = await axios.post('http://localhost:8081/movieLists', {
+            const response = await axios.post('https://movie-list-backend-api-1812.onrender.com/movieLists', {
                 name,
                 isPublic
             }, {

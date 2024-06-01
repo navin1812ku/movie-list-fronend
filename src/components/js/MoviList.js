@@ -14,7 +14,7 @@ function MovieList() {
         const fetchMovieListDetails = async () => {
             try {
                 const token = localStorage.getItem('token');
-                const res = await axios.get(`http://localhost:8081/movieLists/${id}`, {
+                const res = await axios.get(`https://movie-list-backend-api-1812.onrender.com/movieLists/${id}`, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
