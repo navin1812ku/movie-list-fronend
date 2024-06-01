@@ -1,0 +1,62 @@
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router';
+import '../css/MovieList.css';  // Import the CSS file
+
+function MovieList() {
+    const { id } = useParams();
+    const [movieList, setMovieList] = useState([]);
+    const [movieName, setMovieName] = useState('');
+    const [isMovieAvailable, setMovieAvailable] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
+
+    useEffect(() => {
+        const fetchMovieListDetails = async () => {
+            try {
+                const token = localStorage.getItem('token');
+                const res = await axios.get(`http://localhost:8081/movieLists/${id}`, {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                });
+                if (res.data.success) {
+                    setMovieName(res.data.movieList.name);
+                    if (res.data.movieList.movies.length !== 0) {
+                        setMovieList(res.data.movieList.movies);
+                        setMovieAvailable(true);
+                    }
+                    else {
+                        setErrorMessage("No movie added yet");
+                    }
+                    console.log(movieName, movieList, isMovieAvailable);
+                }
+                else {
+                    setMovieName(res.data.movieList.name);
+                    setErrorMessage(res.data.movieList.message);
+                }
+            } catch (error) {
+                console.error('Failed to fetch movie lists:', error);
+            }
+        };
+
+        fetchMovieListDetails();
+    }, [id]);
+
+    return (
+        <div className="movie-list-container">
+            <h1 className="movie-list-title">{movieName}</h1>
+            {errorMessage && !isMovieAvailable &&
+                <h2 className="movie-list-search-message">{errorMessage}</h2>
+            }
+            {movieList.map((m) => (
+                <div key={m.imdbID} className="movie-card">
+                    <img src={m.poster} alt={m.title} />
+                    <h4>{m.title}</h4>
+                    <p>{m.year}</p>
+                </div>
+            ))}
+        </div>
+    );
+}
+
+export default MovieList;

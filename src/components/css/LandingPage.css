@@ -1,0 +1,80 @@
+/* LandingPage.css */
+
+.landing-page {
+    padding: 20px;
+}
+
+.search-form {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    flex: 1;
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+.movies-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.movie-card {
+    position: relative; /* Position movie card relative to its container */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    height: auto;
+    padding: 20px; /* Increase padding to increase height */
+    margin-bottom: 10px; /* Increase margin to add space between cards */
+    background-color: #fff;
+}
+
+.movie-poster {
+    width: 100%;
+    height: 250px; /* Set a fixed height for the movie posters */
+    object-fit: cover; /* Maintain aspect ratio and crop if necessary */
+    border-radius: 5px;
+}
+
+.movie-title {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 15px;
+    text-align: left; /* Center movie title */
+}
+
+.movie-year {
+    margin-top: 5px;
+    color: #666;
+}
+
+.add-list-button {
+    position: absolute; /* Position button absolutely within the movie card */
+    bottom: 10px; /* Distance from the bottom */
+    left: 10px; /* Distance from the left */
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+.lists-container {
+    margin-top: 20px;
+}

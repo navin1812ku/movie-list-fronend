@@ -1,0 +1,102 @@
+/* Profile.css */
+
+.profile-container {
+    padding: 2rem;
+    background-color: #f8f9fa;
+    justify-content: center;
+}
+
+.profile-header {
+    text-align: center;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.profile-user-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.profile-user-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.profile-user-title {
+    margin: 0.5rem 0;
+    color: #333;
+}
+
+.profile-movie-lists-header {
+    text-align: center;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.profile-movies-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.profile-movies {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.profile-movie-title {
+    margin: 0.5rem 0;
+    color: #333;
+}
+
+.profile-view-morw-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+}
+
+.profile-view-morw-button:hover,
+.profile-create-list-button:hover {
+    background-color: #000000;
+}
+
+.profile-create-list-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+    align-items: center;
+}
+
+.profile-create-list-button-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}

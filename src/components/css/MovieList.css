@@ -1,0 +1,40 @@
+/* MovieList.css */
+
+.movie-list-container {
+    margin: auto;
+    text-align: center;
+}
+
+.movie-list-title {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.movie-card {
+    display: inline-block;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 15px;
+    width: 200px;
+    padding: 10px;
+    text-align: center;
+}
+
+.movie-card img {
+    max-width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.movie-card h4 {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #555;
+}
+
+.movie-card p {
+    font-size: 1em;
+    color: #888;
+    margin-bottom: 10px;
+}
