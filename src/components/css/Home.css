@@ -1,8 +1,13 @@
-/* Home.css */
+.home-card {
+    width: 75%;
+    margin: auto; /* Center the card horizontally */
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+}
 
 .home-container {
     text-align: center;
-    margin-top: 50px;
 }
 
 h1 {

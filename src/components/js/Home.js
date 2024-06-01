@@ -4,10 +4,13 @@ import '../css/Home.css'; // Import CSS file
 
 const Home = () => {
     return (
-        <div>
+        <div className='home-card'>
             <div className="home-container">
                 <h1>Welcome to Our Website!</h1>
-                <p>This website provides you with amazing features and services. Sign up now to get started!</p>
+                <p>A film-adding website allows users to seamlessly add, manage, 
+                    and explore a vast collection of films while engaging with a 
+                    vibrant community of movie enthusiasts through ratings, reviews, 
+                    and social sharing.</p>
                 <div className="button-container">
                     <Link to="/login" className="login-button">Login</Link>
                     <Link to="/register" className="register-button">Register</Link>
