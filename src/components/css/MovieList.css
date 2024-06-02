@@ -1,5 +1,3 @@
-/* MovieList.css */
-
 .movie-list-container {
     margin: auto;
     text-align: center;
@@ -18,17 +16,23 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 15px;
     width: 200px;
+    height: 350px; /* Set a fixed height for the card */
     padding: 10px;
     text-align: center;
+    overflow: hidden; /* Hide overflow to keep the card size consistent */
 }
 
 .movie-card img {
-    max-width: 100%;
+    width: 180px; /* Increase the width for the image */
+    height: 250px; /* Adjust the height proportionally */
     border-radius: 10px 10px 0 0;
+    display: block;
+    margin: 0 auto;
+    object-fit: cover; /* Ensure the image covers the specified dimensions */
 }
 
 .movie-card h4 {
-    font-size: 1.2em;
+    font-size: 1em;
     margin: 10px 0;
     color: #555;
 }
@@ -37,4 +41,10 @@
     font-size: 1em;
     color: #888;
     margin-bottom: 10px;
+    /* Limit the number of lines for the description */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Show only two lines */
+    -webkit-box-orient: vertical;
 }
