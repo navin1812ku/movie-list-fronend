@@ -16,10 +16,10 @@ function LandingPage() {
     useEffect(() => {
         const handleDefaultMovieList = async (id) => {
             const token = localStorage.getItem('token');
-            if (id !== "one piece" && id!=="man") {
+            if (id !== "one piece" && id !== "man") {
                 setSearchQuery(id);
             }
-            const res = await axios.get(`http://localhost:8081/search/${id}`, {
+            const res = await axios.get(`https://movie-list-backend-api-1812.onrender.com/search/${id}`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -39,7 +39,7 @@ function LandingPage() {
     const handleSearch = async (e) => {
         e.preventDefault();
         const token = localStorage.getItem('token');
-        const res = await axios.get(`http://localhost:8081/search/${query}`, {
+        const res = await axios.get(`https://movie-list-backend-api-1812.onrender.com/search/${query}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -54,7 +54,7 @@ function LandingPage() {
         setSearchMessage(`Search results for "${query}"`);
     };
 
-    const addMovieToList = async (id,query) => {
+    const addMovieToList = async (id, query) => {
         navigate(`/logined/addMovieToList/${id}/${query}`)
     }
 
@@ -79,15 +79,15 @@ function LandingPage() {
                         <img src={movie.Poster} alt={movie.Title} className="landing-page-movie-poster" />
                         <h4 className="landing-page-movie-title">{movie.Title}</h4>
                         <p className="landing-page-movie-year">{movie.Year}</p>
-                        <button className="landing-page-add-list-button" onClick={() => addMovieToList(movie.imdbID,query)}>Add to List</button>
+                        <button className="landing-page-add-list-button" onClick={() => addMovieToList(movie.imdbID, query)}>Add to List</button>
                     </div>
                 ))}
-                {!isDefaulMovieAvailable &&isAvailable && movies.map((movie) => (
+                {!isDefaulMovieAvailable && isAvailable && movies.map((movie) => (
                     <div key={movie.imdbID} className="landing-page-movie-card">
                         <img src={movie.Poster} alt={movie.Title} className="landing-page-movie-poster" />
                         <h4 className="landing-page-movie-title">{movie.Title}</h4>
                         <p className="landing-page-movie-year">{movie.Year}</p>
-                        <button className="landing-page-add-list-button" onClick={() => addMovieToList(movie.imdbID,query)}>Add to List</button>
+                        <button className="landing-page-add-list-button" onClick={() => addMovieToList(movie.imdbID, query)}>Add to List</button>
                     </div>
                 ))}
             </div>
