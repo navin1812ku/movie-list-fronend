@@ -49,8 +49,8 @@ function AddMovieToList() {
         }
     };
 
-    const handleCreatMovieList= async()=>{
-        navigate("/logined/createMovieList");
+    const handleCreatMovieList= async(id)=>{
+        navigate(`/${id}/createMovieList`);
     }
 
     return (
@@ -74,7 +74,7 @@ function AddMovieToList() {
                 </select>
             </div>
             <button onClick={handleAddMovie} className="add-button">Add</button><br></br>
-            <button onClick={handleCreatMovieList} className="add-button">Create new list</button>
+            <button onClick={()=>handleCreatMovieList(id)} className="add-button">Create new list</button>
             {successMessage && (
                 <div className="success-message">
                     <span className="tick-symbol">&#10004;</span>

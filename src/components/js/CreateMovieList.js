@@ -28,11 +28,18 @@ function CreateMovieList() {
             } else {
                 if (response.data.message === "Movie list created successfully") {
                     setSuccessMessage(response.data.message);
-                    setTimeout(() => {
-                        navigate('/logined/profile');
-                    }, 2000);
+                    if (id === 'logined') {
+                        setTimeout(() => {
+                            navigate('/logined/profile');
+                        }, 2000);
+                    }
+                    else{
+                        setTimeout(() => {
+                            navigate(`/logined/addMovieToList/${id}`);
+                        }, 2000);
+                    }
                 }
-                else{
+                else {
                     setErrorMessage(response.data.message);
                 }
             }
@@ -53,7 +60,7 @@ function CreateMovieList() {
                         className="form-input"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
-                        onFocus={() => setIsTyping(true)} 
+                        onFocus={() => setIsTyping(true)}
                         onBlur={() => setIsTyping(false)}
                         required
                     />
@@ -76,7 +83,7 @@ function CreateMovieList() {
                         <span className="tick-symbol">&#10004;</span>
                         {successMessage}
                     </div>
-                )}  
+                )}
             </form>
         </div>
     );
