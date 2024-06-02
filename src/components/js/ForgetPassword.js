@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
-import '../css/ForgetPassword.css'; // Adjust the path according to your file structure
+import '../css/ForgetPassword.css';
+import { useNavigate } from 'react-router-dom';
 
 function ForgetPassword() {
     const [email, setEmail] = useState("");
     const [successMessage, setSuccessMessage] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
     const [isTyping, setIsTyping] = useState(false);
+    const navigate = useNavigate();
 
     const handleForgetPassword = async (e) => {
         e.preventDefault();
@@ -22,6 +24,9 @@ function ForgetPassword() {
             setErrorMessage("An error occurred. Please try again.");
         }
     };
+    const handleLogin = () => {
+        navigate('/login');
+    }
 
     return (
         <div className="forget-password-container">
@@ -42,6 +47,8 @@ function ForgetPassword() {
                 </div>
                 <button type="submit" className="forget-button">Submit</button>
             </form>
+            <br/>
+            <button onClick={handleLogin} className="forget-button">Login</button>
             {errorMessage && !isTyping && <div className="error-message">{errorMessage}</div>}
             {successMessage && (
                 <div className="success-message">

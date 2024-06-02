@@ -72,7 +72,7 @@ function Profile() {
     const deleteList=async(id)=>{
         try{
             const token = localStorage.getItem('token');
-            const response=await axios.delete(`http://localhost:8081/moviesList/${id}`,{
+            const response=await axios.delete(`https://movie-list-backend-api-1812.onrender.com/moviesList/${id}`,{
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },

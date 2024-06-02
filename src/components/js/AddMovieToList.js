@@ -34,7 +34,7 @@ function AddMovieToList() {
         try {
             const JWTToken = localStorage.getItem('token');
             console.log(id, movieListId, JWTToken);
-            const list = await axios.post(`https://movie-list-backend-api-1812.onrender.com/${id}/${movieListId}`, { token: JWTToken }, {
+            const list = await axios.post(`https://movie-list-backend-api-1812.onrender.com/movieLists/${id}/${movieListId}`, { token: JWTToken }, {
                 headers: {
                     Authorization: `Bearer ${JWTToken}`,
                 },
