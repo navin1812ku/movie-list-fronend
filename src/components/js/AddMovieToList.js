@@ -5,7 +5,7 @@ import '../css/AddMovieToList.css';
 import { useNavigate } from 'react-router-dom';
 
 function AddMovieToList() {
-    const { id } = useParams();
+    const { id,query } = useParams();
     const [movieLists, setMovieLists] = useState([]);
     const [movieListId, setSelectedList] = useState('');
     const [successMessage, setSuccessMessage] = useState('');
@@ -42,7 +42,7 @@ function AddMovieToList() {
             console.log(list);
             setSuccessMessage('Movie added to list successfully!');
             setTimeout(() => {
-                navigate('/logined/landingPage');
+                navigate(`/logined/landingPage/${query}`);
             }, 2000);
         } catch (error) {
             console.error('Failed to add movie to list:', error);

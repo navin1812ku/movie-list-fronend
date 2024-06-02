@@ -37,7 +37,7 @@ function CreateMovieList() {
                     }
                     else {
                         setTimeout(() => {
-                            navigate(`/logined/addMovieToList/${id}`);
+                            navigate(`/logined/addMovieToList/${id}/:query`);
                         }, 2000);
                     }
                 }

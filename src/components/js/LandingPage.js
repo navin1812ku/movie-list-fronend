@@ -51,8 +51,8 @@ function LandingPage() {
         setSearchMessage(`Search results for "${query}"`);
     };
 
-    const addMovieToList = async (id) => {
-        navigate(`/logined/addMovieToList/${id}`)
+    const addMovieToList = async (id,query) => {
+        navigate(`/logined/addMovieToList/${id}/${query}`)
     }
 
     return (
@@ -76,7 +76,7 @@ function LandingPage() {
                         <img src={movie.Poster} alt={movie.Title} className="landing-page-movie-poster" />
                         <h4 className="landing-page-movie-title">{movie.Title}</h4>
                         <p className="landing-page-movie-year">{movie.Year}</p>
-                        <button className="landing-page-add-list-button" onClick={() => addMovieToList(movie.imdbID)}>Add to List</button>
+                        <button className="landing-page-add-list-button" onClick={() => addMovieToList(movie.imdbID,query)}>Add to List</button>
                     </div>
                 ))}
                 {isAvailable && movies.map((movie) => (
@@ -84,7 +84,7 @@ function LandingPage() {
                         <img src={movie.Poster} alt={movie.Title} className="landing-page-movie-poster" />
                         <h4 className="landing-page-movie-title">{movie.Title}</h4>
                         <p className="landing-page-movie-year">{movie.Year}</p>
-                        <button className="landing-page-add-list-button" onClick={() => addMovieToList(movie.imdbID)}>Add to List</button>
+                        <button className="landing-page-add-list-button" onClick={() => addMovieToList(movie.imdbID,query)}>Add to List</button>
                     </div>
                 ))}
             </div>
