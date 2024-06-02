@@ -9,7 +9,7 @@ function NavBar() {
                     <Link className="navbar-link" to="/logined/landingPage/man">Search Movie</Link>
                     <Link className="navbar-link" to="/logined/searchMovieList">Search Movie List</Link>
                     <Link className="navbar-link" to="/logined/profile">Profile</Link>
-                    <Link className="navbar-link" to="/user/logout">Logout</Link>
+                    <Link className="navbar-link" to="/logined/logout">Logout</Link>
                 </div>
             </nav>
             <Outlet />
