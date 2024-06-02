@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from "axios";
 import '../css/CreateMovieList.css';
 
 function CreateMovieList() {
+    const { id } = useParams();
     const [name, setName] = useState("");
     const [isPublic, setIsPublic] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
@@ -33,7 +34,7 @@ function CreateMovieList() {
                             navigate('/logined/profile');
                         }, 2000);
                     }
-                    else{
+                    else {
                         setTimeout(() => {
                             navigate(`/logined/addMovieToList/${id}`);
                         }, 2000);
