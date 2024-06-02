@@ -12,8 +12,6 @@ import MovieList from './components/js/MoviList';
 import CreateMovieList from './components/js/CreateMovieList';
 import UserCanChangePassword from './components/js/UserCanChangePassword';
 import ChangePassword from './components/js/ChangePassword';
-import ForgetPassword from './components/js/ForgetPassword';
-import UserChangePasssword from './components/js/UserChangePassword';
 import SearchMovieList from './components/js/SearchMovieList';
 import ViewMovieList from './components/js/ViewMovieList';
 function App() {
@@ -25,20 +23,18 @@ function App() {
           <Route path="/" element={<Home />}/>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/:id" element={<NavBar/>}>
-          <Route path="/:id/landingPage/:id" element={<LandingPage />} />
-          <Route path="/:id/addMovieToList/:id/:query" element={<AddMovieToList />} />
-          <Route path="/:id/profile" element={<Profile />} />
-          <Route path="/:id/logout" element={<Logout/>}/>
-          <Route path="/:id/movieList/:id" element={<MovieList/>}/>
-          <Route path="/:id/createMovieList" element={<CreateMovieList/>}/>
-          <Route path="/:id/canChangePassword" element={<UserCanChangePassword/>}/>
-          <Route path="/:id/changePassword" element={<ChangePassword/>}/>
-          <Route path="/:id/searchMovieList" element={<SearchMovieList/>}/>
-          <Route path="/:id/viewMovieList/:id" element={<ViewMovieList/>}/>
+          <Route path="/logined" element={<NavBar/>}>
+          <Route path="/logined/landingPage/:id" element={<LandingPage />} />
+          <Route path="/logined/addMovieToList/:id/:query" element={<AddMovieToList />} />
+          <Route path="/logined/profile" element={<Profile />} />
+          <Route path="/logined/logout" element={<Logout/>}/>
+          <Route path="/logined/movieList/:id" element={<MovieList/>}/>
+          <Route path="/logined/createMovieList/:id" element={<CreateMovieList/>}/>
+          <Route path="/logined/canChangePassword" element={<UserCanChangePassword/>}/>
+          <Route path="/logined/changePassword" element={<ChangePassword/>}/>
+          <Route path="/logined/searchMovieList" element={<SearchMovieList/>}/>
+          <Route path="/logined/viewMovieList/:id" element={<ViewMovieList/>}/>
           </Route>
-          <Route path='/forgetPassword' element={<ForgetPassword/>}/>
-          <Route path='/:id/forgetPassword' element={<UserChangePasssword/>}/>
         </Routes>
       </Router>
     </div>

@@ -16,7 +16,7 @@ function Login() {
             const res = await axios.post('https://movie-list-backend-api-1812.onrender.com/login', { email, password });
             if (res.data.message === "Login Successfully") {
                 localStorage.setItem('token', res.data.token);
-                const query="one piece";
+                const query = "one piece";
                 navigate(`/logined/landingPage/${query}`);
             }
             else {
@@ -61,7 +61,6 @@ function Login() {
                     required
                 />
                 <button type="submit" className="form-button">Login</button>
-                <button onClick={onForGetPassword} className="form-button">Forget Password</button>
                 <button onClick={onRegister} className="form-button">Register</button>
             </form>
         </div>

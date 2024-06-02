@@ -54,7 +54,7 @@ function Profile() {
     }
     const createMovieList = () => {
         try {
-            navigate(`/logined/createMovieList`);
+            navigate(`/logined/createMovieList/id`);
         }
         catch (error) {
             console.error('Failed to show the create movie list page:', error);

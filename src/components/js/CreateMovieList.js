@@ -30,7 +30,7 @@ function CreateMovieList() {
                 if (response.data.message === "Movie list created successfully") {
                     setSuccessMessage(response.data.message);
                     console.log(id);
-                    if (id === "logined") {
+                    if (id === "id") {
                         setTimeout(() => {
                             navigate('/logined/profile');
                         }, 2000);
