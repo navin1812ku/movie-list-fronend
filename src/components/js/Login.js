@@ -16,7 +16,8 @@ function Login() {
             const res = await axios.post('https://movie-list-backend-api-1812.onrender.com/login', { email, password });
             if (res.data.message === "Login Successfully") {
                 localStorage.setItem('token', res.data.token);
-                navigate('/logined/landingPage');
+                const query="man";
+                navigate(`/logined/landingPage/${query}`);
             }
             else {
                 setErrorMessage(res.data.message);

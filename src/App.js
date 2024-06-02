@@ -26,7 +26,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/:id" element={<NavBar/>}>
-          <Route path="/:id/landingPage" element={<LandingPage />} />
+          <Route path="/:id/landingPage/:id" element={<LandingPage />} />
           <Route path="/:id/addMovieToList/:id" element={<AddMovieToList />} />
           <Route path="/:id/profile" element={<Profile />} />
           <Route path="/:id/logout" element={<Logout/>}/>
