@@ -38,7 +38,7 @@ function App() {
           <Route path="/:id/viewMovieList/:id" element={<ViewMovieList/>}/>
           </Route>
           <Route path='/forgetPassword' element={<ForgetPassword/>}/>
-          <Route path='/user/forgetPassword' element={<UserChangePasssword/>}/>
+          <Route path='/:id/forgetPassword' element={<UserChangePasssword/>}/>
         </Routes>
       </Router>
     </div>
