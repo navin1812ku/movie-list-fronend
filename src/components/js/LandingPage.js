@@ -16,7 +16,9 @@ function LandingPage() {
     useEffect(() => {
         const handleDefaultMovieList = async (id) => {
             const token = localStorage.getItem('token');
-            setSearchQuery(id);
+            if (id !== "one piece" && id!=="man") {
+                setSearchQuery(id);
+            }
             const res = await axios.get(`http://localhost:8081/search/${id}`, {
                 headers: {
                     Authorization: `Bearer ${token}`
