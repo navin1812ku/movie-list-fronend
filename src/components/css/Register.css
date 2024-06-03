@@ -6,6 +6,7 @@
     height: 100vh; /* Make body take up full height of viewport */
     margin: 0; /* Remove default margin */
     background-color: #f5f5f5; /* Set a background color */
+    background-image: url('image.png');
 }
 .register-form {
     background: #ffffff;

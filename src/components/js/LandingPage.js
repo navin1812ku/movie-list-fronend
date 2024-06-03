@@ -79,7 +79,7 @@ function LandingPage() {
                         <img src={movie.Poster} alt={movie.Title} className="landing-page-movie-poster" />
                         <h4 className="landing-page-movie-title">{movie.Title}</h4>
                         <p className="landing-page-movie-year">{movie.Year}</p>
-                        <button className="landing-page-add-list-button" onClick={() => addMovieToList(movie.imdbID, query)}>Add to List</button>
+                        <button className="landing-page-add-list-button" onClick={() => addMovieToList(movie.imdbID, "one piece")}>Add to List</button>
                     </div>
                 ))}
                 {!isDefaulMovieAvailable && isAvailable && movies.map((movie) => (

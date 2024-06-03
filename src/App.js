@@ -29,7 +29,7 @@ function App() {
           <Route path="/logined/profile" element={<Profile />} />
           <Route path="/logined/logout" element={<Logout/>}/>
           <Route path="/logined/movieList/:id" element={<MovieList/>}/>
-          <Route path="/logined/createMovieList/:id" element={<CreateMovieList/>}/>
+          <Route path="/logined/createMovieList/:id/:query" element={<CreateMovieList/>}/>
           <Route path="/logined/canChangePassword" element={<UserCanChangePassword/>}/>
           <Route path="/logined/changePassword" element={<ChangePassword/>}/>
           <Route path="/logined/searchMovieList" element={<SearchMovieList/>}/>

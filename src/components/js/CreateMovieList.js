@@ -4,7 +4,7 @@ import axios from "axios";
 import '../css/CreateMovieList.css';
 
 function CreateMovieList() {
-    const { id } = useParams();
+    const { id, query } = useParams();
     const [name, setName] = useState("");
     const [isPublic, setIsPublic] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
@@ -30,14 +30,14 @@ function CreateMovieList() {
                 if (response.data.message === "Movie list created successfully") {
                     setSuccessMessage(response.data.message);
                     console.log(id);
-                    if (id === "id") {
+                    if (id === "id" && query==="profile") {
                         setTimeout(() => {
                             navigate('/logined/profile');
                         }, 2000);
                     }
                     else {
                         setTimeout(() => {
-                            navigate(`/logined/addMovieToList/${id}/:query`);
+                            navigate(`/logined/addMovieToList/${id}/${query}`);
                         }, 2000);
                     }
                 }

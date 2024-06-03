@@ -50,7 +50,7 @@ function AddMovieToList() {
     };
 
     const handleCreatMovieList= async(id)=>{
-        navigate(`/logined/createMovieList/${id}`);
+        navigate(`/logined/createMovieList/${id}/${query}`);
     }
 
     return (
