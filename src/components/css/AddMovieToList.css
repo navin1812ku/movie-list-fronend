@@ -1,0 +1,114 @@
+.add-movie-to-list {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.add-movie-to-list h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+}
+
+.add-movie-to-list p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #666;
+    text-align: center;
+}
+
+.add-movie-to-list-form-group {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.add-movie-to-list-select-input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.add-movie-to-list-select-input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.add-movie-to-list-add-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-movie-to-list-add-button:hover {
+    background-color: #0056b3;
+}
+
+.success-message {
+    color: #28a745;
+    text-align: center;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.success-message .tick-symbol {
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .add-movie-to-list {
+        padding: 20px;
+        max-width: 300px;
+    }
+
+    .add-movie-to-list h2 {
+        font-size: 20px;
+    }
+
+    .add-movie-to-list p, .add-movie-to-list-select-input, .add-movie-to-list-add-button {
+        font-size: 14px;
+    }
+
+    .success-message .tick-symbol {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .add-movie-to-list {
+        padding: 15px;
+        max-width: 250px;
+    }
+
+    .add-movie-to-list h2 {
+        font-size: 18px;
+    }
+
+    .add-movie-to-list p, .add-movie-to-list-select-input, .add-movie-to-list-add-button {
+        font-size: 12px;
+    }
+
+    .success-message .tick-symbol {
+        font-size: 0.9rem;
+    }
+}
