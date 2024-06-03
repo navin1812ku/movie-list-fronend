@@ -16,7 +16,7 @@
     height: 100vh; /* Make body take up full height of viewport */
     margin: 0; /* Remove default margin */
     background-color: #f5f5f5; /* Set a background color */
-    background-image: url('public\image.png'); /* Add your background image */
+    background-image: url('https://xxboxnews.blob.core.windows.net/prod/sites/2/2023/05/Background-size1920x1080-4e1694a6-75aa-4c36-9d4d-7fb6a3102005-bc5318781aad7f5c8520.png'); /* Add your background image */
     background-size: cover; /* Cover the entire viewport */
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
