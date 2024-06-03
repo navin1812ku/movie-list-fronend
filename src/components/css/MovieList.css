@@ -9,42 +9,81 @@
     color: #333;
 }
 
-.movie-card {
+.movie-list-movie-card {
     display: inline-block;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 15px;
     width: 200px;
-    height: 350px; /* Set a fixed height for the card */
+    height: 350px;
     padding: 10px;
     text-align: center;
-    overflow: hidden; /* Hide overflow to keep the card size consistent */
+    overflow: hidden;
 }
 
-.movie-card img {
-    width: 180px; /* Increase the width for the image */
-    height: 250px; /* Adjust the height proportionally */
+.movie-list-movie-card img {
+    width: 180px;
+    height: 250px;
     border-radius: 10px 10px 0 0;
     display: block;
     margin: 0 auto;
-    object-fit: cover; /* Ensure the image covers the specified dimensions */
+    object-fit: cover;
 }
 
-.movie-card h4 {
+.movie-list-movie-card h4 {
     font-size: 1em;
     margin: 10px 0;
     color: #555;
 }
 
-.movie-card p {
+.movie-list-movie-card p {
     font-size: 1em;
     color: #888;
     margin-bottom: 10px;
-    /* Limit the number of lines for the description */
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 2; /* Show only two lines */
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+}
+
+@media (max-width: 768px) {
+    .movie-list-movie-card {
+        width: 150px;
+        height: 300px;
+    }
+
+    .movie-list-movie-card img {
+        width: 140px;
+        height: 200px;
+    }
+
+    .movie-list-movie-card h4 {
+        font-size: 0.9em;
+    }
+
+    .movie-list-movie-card p {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .movie-list-movie-card {
+        width: 120px;
+        height: 250px;
+    }
+
+    .movie-list-movie-card img {
+        width: 110px;
+        height: 160px;
+    }
+
+    .movie-list-movie-card h4 {
+        font-size: 0.8em;
+    }
+
+    .movie-list-movie-card p {
+        font-size: 0.8em;
+    }
 }

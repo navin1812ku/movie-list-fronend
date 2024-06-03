@@ -20,15 +20,15 @@ function Register() {
     };
 
     return (
-        <div className="body">
+        <div className="register-body">
             <form onSubmit={handleSubmit} className="register-form">
-                <h2 className="form-title">Register</h2>
+                <h2 className="register-form-title">Register</h2>
                 <input
                     type="text"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
                     placeholder="Username"
-                    className="form-input"
+                    className="register-form-input"
                     required
                 />
                 <input
@@ -36,7 +36,7 @@ function Register() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Email"
-                    className="form-input"
+                    className="register-form-input"
                     required
                 />
                 <input
@@ -44,10 +44,10 @@ function Register() {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="Password"
-                    className="form-input"
+                    className="register-form-input"
                     required
                 />
-                <button type="submit" className="form-button">Register</button>
+                <button type="submit" className="register-form-button">Register</button>
             </form>
         </div>
     );

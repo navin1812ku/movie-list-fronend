@@ -1,6 +1,7 @@
 .movie-search-component {
     text-align: center;
     margin: 20px;
+    padding: 0 15px;
 }
 
 .movie-search-bar {
@@ -25,6 +26,10 @@
     background-color: #007bff;
     color: #fff;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.movie-search-bar button:hover {
+    background-color: #0056b3;
 }
 
 .error-message {
@@ -32,26 +37,32 @@
     margin-top: 20px;
 }
 
-.movie-lists {
+.movie-search-movie-lists {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 10px;
+    padding: 0 10px;
 }
 
-.movie-list {
-    flex: 1 1 300px;
-    margin-bottom: 10px;
+.movie-search-movie-list {
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
     text-align: left;
+    background-color: #fff;
+    transition: transform 0.2s;
 }
 
-.movie-list h2 {
+.movie-search-movie-list:hover {
+    transform: scale(1.02);
+}
+
+.movie-search-movie-list h2 {
     margin-bottom: 10px;
+    font-size: 1.25rem;
 }
 
-.add-button {
+.movie-search-add-button {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -60,6 +71,33 @@
     cursor: pointer;
 }
 
-.movie-list-search-message {
-    text-align: left;
+.movie-search-add-button:hover {
+    background-color: #218838;
+}
+
+@media (max-width: 768px) {
+    .movie-search-bar {
+        flex-direction: column;
+    }
+
+    .movie-search-bar input {
+        margin-right: 0;
+        margin-bottom: 10px;
+        max-width: 100%;
+    }
+
+    .movie-search-bar button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .movie-search-movie-list h2 {
+        font-size: 1rem;
+    }
+
+    .movie-search-add-button {
+        padding: 10px;
+        font-size: 0.875rem;
+    }
 }

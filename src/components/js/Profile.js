@@ -52,9 +52,9 @@ function Profile() {
             console.error('Failed to fetch movie lists:', error);
         }
     }
-    const createMovieList = () => {
+    const createMovieList = (userId, username) => {
         try {
-            navigate(`/logined/createMovieList/id/profile`);
+            navigate(`/logined/createMovieList/${userId}/${username}`);
         }
         catch (error) {
             console.error('Failed to show the create movie list page:', error);
@@ -69,22 +69,22 @@ function Profile() {
         }
     }
 
-    const deleteList=async(id)=>{
-        try{
+    const deleteList = async (id) => {
+        try {
             const token = localStorage.getItem('token');
-            const response=await axios.delete(`https://movie-list-backend-api-1812.onrender.com/moviesList/${id}`,{
+            const response = await axios.delete(`https://movie-list-backend-api-1812.onrender.com/moviesList/${id}`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
             });
-            if(response.success){
+            if (response.success) {
                 navigate("/logined/profile");
             }
-            else{
+            else {
                 navigate("/logined/profile");
             }
         }
-        catch(error){
+        catch (error) {
             console.error('Failed to delete movie:', error);
         }
     }
@@ -103,7 +103,7 @@ function Profile() {
             </div>
             <h2 className="profile-movie-lists-header">Movie Lists</h2>
             <div className="profile-create-list-button-container">
-                <button className="profile-create-list-button" onClick={createMovieList}>Create Movie List</button>
+                <button className="profile-create-list-button" onClick={() => createMovieList("id", "profile")}>Create Movie List</button>
             </div>
             <div className="profile-movies-container">
                 {movieListDetails.map((movie) => (

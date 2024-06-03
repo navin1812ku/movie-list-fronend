@@ -30,7 +30,7 @@ function CreateMovieList() {
                 if (response.data.message === "Movie list created successfully") {
                     setSuccessMessage(response.data.message);
                     console.log(id);
-                    if (id === "id" && query==="profile") {
+                    if (id === "id" && query === "profile") {
                         setTimeout(() => {
                             navigate('/logined/profile');
                         }, 2000);
@@ -54,12 +54,12 @@ function CreateMovieList() {
         <div className="create-movie-list-container">
             <h1 className="create-movie-list-header">Create Movie List</h1>
             <form onSubmit={handleAdd}>
-                <div className="form-group">
-                    <label className="form-label" htmlFor="name">List Name</label>
+                <div className="create-movie-list-form-group">
+                    <label className="create-movie-list-form-label" htmlFor="name">List Name</label>
                     <input
                         type="text"
                         id="name"
-                        className="form-input"
+                        className="create-movie-list-form-input"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         onFocus={() => setIsTyping(true)}
@@ -67,18 +67,18 @@ function CreateMovieList() {
                         required
                     />
                 </div>
-                <div className="form-group">
-                    <label className="form-label">
+                <div className="create-movie-list-form-group">
+                    <label className="create-movie-list-form-label">
                         <input
                             type="checkbox"
-                            className="form-checkbox"
+                            className="create-movie-list-form-checkbox"
                             checked={isPublic}
                             onChange={(e) => setIsPublic(e.target.checked)}
                         />
                         Is Public
                     </label>
                 </div>
-                <button type="submit" className="add-button">Add</button>
+                <button type="submit" className="create-movie-list-add-button">Add</button>
                 {errorMessage && !isTyping && <div className="error-message">{errorMessage}</div>}
                 {successMessage && (
                     <div className="success-message">

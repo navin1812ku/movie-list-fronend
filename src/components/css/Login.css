@@ -1,12 +1,16 @@
-.body {
+.login-body {
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    height: 100vh; /* Make body take up full height of viewport */
-    margin: 0; /* Remove default margin */
-    background-color: #f5f5f5; /* Set a background color */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f5f5f5;
     background-image: url('https://xxboxnews.blob.core.windows.net/prod/sites/2/2023/05/Background-size1920x1080-4e1694a6-75aa-4c36-9d4d-7fb6a3102005-bc5318781aad7f5c8520.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
+
 .login-form {
     background: #ffffff;
     padding: 40px;
@@ -19,7 +23,14 @@
     align-items: center;
 }
 
-.form-input {
+.login-form-title {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+}
+
+.login-form-input {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
@@ -28,18 +39,13 @@
     font-size: 16px;
     transition: border-color 0.3s;
 }
-.form-title {
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
-}
 
-.form-input:focus {
+.login-form-input:focus {
     border-color: #007bff;
     outline: none;
 }
 
-.form-button {
+.login-form-button {
     width: 100%;
     padding: 10px;
     margin: 20px 0;
@@ -52,6 +58,43 @@
     transition: background-color 0.3s;
 }
 
-.form-button:hover {
+.login-form-button:hover {
     background-color: #0056b3;
+}
+
+.error-message {
+    color: red;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .login-form {
+        padding: 20px;
+        max-width: 300px;
+    }
+
+    .login-form-title {
+        font-size: 20px;
+    }
+
+    .login-form-input,
+    .login-form-button {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-form {
+        padding: 15px;
+        max-width: 250px;
+    }
+
+    .login-form-title {
+        font-size: 18px;
+    }
+
+    .login-form-input,
+    .login-form-button {
+        font-size: 12px;
+    }
 }

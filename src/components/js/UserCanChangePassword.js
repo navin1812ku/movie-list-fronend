@@ -48,7 +48,7 @@ function UserCanChangePassword() {
                 </div>
                 <button type="submit" className="can-password-change-check-button">Check</button>
             </form>
-            {errorMessage && <div className="can-password-change-error-message">{errorMessage}</div>}
+            {errorMessage && <div className="error-message">{errorMessage}</div>}
         </div>
     );
 }

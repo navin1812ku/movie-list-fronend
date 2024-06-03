@@ -16,7 +16,7 @@ function LandingPage() {
     useEffect(() => {
         const handleDefaultMovieList = async (id) => {
             const token = localStorage.getItem('token');
-            if (id !== "one piece" && id !== "man") {
+            if (id !== "one piece" && id!=="man") {
                 setSearchQuery(id);
             }
             const res = await axios.get(`https://movie-list-backend-api-1812.onrender.com/search/${id}`, {
@@ -24,7 +24,8 @@ function LandingPage() {
                     Authorization: `Bearer ${token}`
                 }
             });
-            if (res.data.Search && res.data.Search.length !== 0) {
+            if (!query && res.data.Search && res.data.Search.length !== 0) {
+                console.log("Default");
                 setMovies(res.data.Search);
                 setIsAvailable(false);
                 setIsDefaultMovieAvailable(true);
@@ -38,6 +39,7 @@ function LandingPage() {
 
     const handleSearch = async (e) => {
         e.preventDefault();
+        setMovies([]);
         const token = localStorage.getItem('token');
         const res = await axios.get(`https://movie-list-backend-api-1812.onrender.com/search/${query}`, {
             headers: {
@@ -45,6 +47,7 @@ function LandingPage() {
             }
         });
         if (res.data.Search && res.data.Search.length !== 0) {
+            console.log("after",res.data.Search);
             setMovies(res.data.Search);
             setIsAvailable(true);
         }

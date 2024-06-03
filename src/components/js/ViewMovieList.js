@@ -22,7 +22,7 @@ function ViewMovieList() {
                 console.log(res.data);
                 if (res.data.success) {
                     setMovieName(res.data.movieList.name);
-                    if (res.data.movieList.movies.length!==0) {
+                    if (res.data.movieList.movies.length !== 0) {
                         setMovieList(res.data.movieList.movies);
                         setMovieAvailable(true);
                     }
@@ -50,7 +50,7 @@ function ViewMovieList() {
                 <h2 className="movie-list-search-message">{errorMessage}</h2>
             }
             {isMovieAvailable && movieList.map((m) => (
-                <div key={m.imdbID} className="movie-card">
+                <div key={m.imdbID} className="movie-list-movie-card">
                     <img src={m.poster} alt={m.title} />
                     <h4>{m.title}</h4>
                     <p>{m.year}</p>

@@ -16,7 +16,7 @@ function Login() {
             const res = await axios.post('https://movie-list-backend-api-1812.onrender.com/login', { email, password });
             if (res.data.message === "Login Successfully") {
                 localStorage.setItem('token', res.data.token);
-                const query = "one piece";
+                const query="one piece";
                 navigate(`/logined/landingPage/${query}`);
             }
             else {
@@ -31,21 +31,17 @@ function Login() {
         navigate('/register')
     }
 
-    const onForGetPassword = async () => {
-        navigate('/forgetPassword')
-    }
-
     return (
-        <div className="body">
+        <div className="login-body">
             <form onSubmit={handleSubmit} className="login-form">
-                <h2 className="form-title">Login</h2>
+                <h2 className="login-form-title">Login</h2>
                 {errorMessage && !isTyping && <p className="error-message">{errorMessage}</p>}
                 <input
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Email"
-                    className="form-input"
+                    className="login-form-input"
                     onFocus={() => setIsTyping(true)} // Set isTyping to true when input is focused
                     onBlur={() => setIsTyping(false)}
                     required
@@ -55,13 +51,13 @@ function Login() {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="Password"
-                    className="form-input"
+                    className="login-form-input"
                     onFocus={() => setIsTyping(true)} // Set isTyping to true when input is focused
                     onBlur={() => setIsTyping(false)}
                     required
                 />
-                <button type="submit" className="form-button">Login</button>
-                <button onClick={onRegister} className="form-button">Register</button>
+                <button type="submit" className="login-form-button">Login</button>
+                <button onClick={onRegister} className="login-form-button">Register</button>
             </form>
         </div>
     );

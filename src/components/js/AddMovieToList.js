@@ -57,13 +57,13 @@ function AddMovieToList() {
         <div className="add-movie-to-list">
             <h2>Add Movie to List</h2>
             <p>Movie ID: {id}</p>
-            <div className="form-group">
+            <div className="add-movie-to-list-form-group">
                 <label htmlFor="movieList">Select List:</label>
                 <select
-                    id="movieList"
+                    id="add-movie-to-list-movieList"
                     value={movieListId}
                     onChange={(e) => setSelectedList(e.target.value)}
-                    className="select-input"
+                    className="add-movie-to-list-select-input"
                 >
                     <option value="">Select a list</option>
                     {movieLists.map((list) => (
@@ -73,8 +73,8 @@ function AddMovieToList() {
                     ))}
                 </select>
             </div>
-            <button onClick={handleAddMovie} className="add-button">Add</button><br></br>
-            <button onClick={()=>handleCreatMovieList(id)} className="add-button">Create new list</button>
+            <button onClick={handleAddMovie} className="add-movie-to-list-add-button">Add</button><br></br>
+            <button onClick={()=>handleCreatMovieList(id)} className="add-movie-to-list-add-button">Create new list</button>
             {successMessage && (
                 <div className="success-message">
                     <span className="tick-symbol">&#10004;</span>

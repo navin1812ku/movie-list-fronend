@@ -61,13 +61,13 @@ function SearchMovieList() {
                 />
                 <button type="submit">Search</button>
             </form>            
-            {searchMessage && <h2 className="movie-list-search-message">{searchMessage}</h2>}
+            {searchMessage && <h2 className="success-message">{searchMessage}</h2>}
             {errorMessage && isAvailable && <div className="error-message">{errorMessage}</div>}
-            <div className="movie-lists">
+            <div className="movie-search-movie-lists">
                 {movieLists.map((movieList) => (
-                    <div key={movieList._id} className="movie-list">
+                    <div key={movieList._id} className="movie-search-movie-list">
                         <h2>{movieList.name}</h2>
-                        <button type="submit" onClick={()=>viewMore(movieList._id)} className='add-button'>View details</button>
+                        <button type="submit" onClick={()=>viewMore(movieList._id)} className='movie-search-add-button'>View details</button>
                     </div>
                 ))}
             </div>
