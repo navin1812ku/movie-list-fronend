@@ -5,7 +5,7 @@ function NavBar() {
     return (
         <div>
             <nav className="navbar">
-                <div className="navbar-logo">MyApp
+                <div className="navbar-logo">MENU
                     <div className="dropdown-content">
                         <Link className="navbar-link" to="/logined/landingPage/one piece">Search Movie</Link>
                         <Link className="navbar-link" to="/logined/searchMovieList">Search Movie List</Link>
