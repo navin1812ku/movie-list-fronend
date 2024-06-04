@@ -87,7 +87,6 @@
     .navbar h1 {
         font-size: 1.3rem;
         margin-top: 1rem;
-        order: 1;
         text-align: right;
     }
 
@@ -104,7 +103,6 @@
 
     .hamburger-button {
         align-self: flex-end;
-        order: 2;
     }
 }
 
