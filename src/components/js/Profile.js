@@ -7,6 +7,8 @@ function Profile() {
 
     const [userDetails, setUserDetails] = useState([]);
     const [movieListDetails, setMovieListDetails] = useState([]);
+    const [errorMessage, setErrorMessage] = useState('');
+    const [isAllMovieListAvailable, setIsAllMovieListAvailable] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -33,7 +35,14 @@ function Profile() {
                         Authorization: `Bearer ${token}`,
                     },
                 });
-                setMovieListDetails(res.data);
+                if (res.data.success) {
+                    setIsAllMovieListAvailable(true);
+                    setMovieListDetails(res.data.allMovieLists);
+                }
+                else {
+                    setIsAllMovieListAvailable(false);
+                    setErrorMessage("Looks like your movie list is currently empty! Let's start filling it up with your favorites and discover new gems together.")
+                }
             }
             catch (error) {
                 console.error('Failed to fetch movie lists:', error);
@@ -77,8 +86,8 @@ function Profile() {
                     Authorization: `Bearer ${token}`,
                 },
             });
-            if (response.success) {
-                navigate("/logined/profile");
+            if (response.data.success) {
+                window.location.reload();
             }
             else {
                 navigate("/logined/profile");
@@ -106,7 +115,10 @@ function Profile() {
                 <button className="profile-create-list-button" onClick={() => createMovieList("id", "profile")}>Create Movie List</button>
             </div>
             <div className="profile-movies-container">
-                {movieListDetails.map((movie) => (
+                {!isAllMovieListAvailable &&
+                    <h2 className="success-message">{errorMessage}</h2>
+                }
+                {isAllMovieListAvailable && movieListDetails.map((movie) => (
                     <div key={movie._id} className="profile-movies">
                         <h4 className="profile-movie-title">{movie.name}</h4>
                         <button className="profile-view-morw-button" onClick={() => viewMore(movie._id)}>View More</button>
