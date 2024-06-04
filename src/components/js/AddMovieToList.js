@@ -21,7 +21,7 @@ function AddMovieToList() {
                         Authorization: `Bearer ${token}`,
                     },
                 });
-                setMovieLists(res.data);
+                setMovieLists(res.data.allMovieLists);
             } catch (error) {
                 console.error('Failed to fetch movie lists:', error);
             }
