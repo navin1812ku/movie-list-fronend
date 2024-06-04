@@ -20,7 +20,6 @@
     width: 30px;
     height: 20px;
     cursor: pointer;
-    order: 2;
 }
 
 .hamburger-button .line {
@@ -34,14 +33,14 @@
     flex-direction: column;
     position: absolute;
     top: 100%;
-    right: 0;
+    left: 0;
     background-color: #333;
     padding: 0;
     margin: 0;
     list-style: none;
     min-width: 200px;
     z-index: 1;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .navbar-link {
@@ -65,7 +64,7 @@
     background-color: #555;
     color: #ffcc00;
     transform: scale(1.05);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .navbar-logo:hover .dropdown-content {
@@ -89,6 +88,7 @@
         font-size: 1.3rem;
         margin-top: 1rem;
         order: 1;
+        text-align: right;
     }
 
     .dropdown-content {
@@ -103,14 +103,8 @@
     }
 
     .hamburger-button {
-        align-self: flex-start;
+        align-self: flex-end;
         order: 2;
-    }
-
-    .dropdown-content {
-        top: 100%;
-        right: 0;
-        left: 0;
     }
 }
 
