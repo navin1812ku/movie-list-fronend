@@ -50,6 +50,7 @@ function LandingPage() {
             console.log("after",res.data.Search);
             setMovies(res.data.Search);
             setIsAvailable(true);
+            setIsDefaultMovieAvailable(false);
         }
         else {
             setErrorMessage(`No movie found with the name ${query}`)
