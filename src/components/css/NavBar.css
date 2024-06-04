@@ -89,6 +89,7 @@
     .navbar h1 {
         font-size: 1.3rem;
         margin-top: 1rem;
+        order: 2;
     }
 
     .dropdown-content {
@@ -104,6 +105,7 @@
 
     .hamburger-button {
         align-self: flex-end;
+        order: 1;
     }
 }
 
