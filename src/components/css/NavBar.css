@@ -1,6 +1,6 @@
 .navbar {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
     background-color: #333;
@@ -9,11 +9,23 @@
 }
 
 .navbar-logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: white;
-    cursor: pointer;
     position: relative;
+    cursor: pointer;
+}
+
+.hamburger-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.hamburger-button .line {
+    width: 100%;
+    height: 3px;
+    background-color: white;
 }
 
 .dropdown-content {
@@ -32,54 +44,81 @@
 }
 
 .navbar-link {
-    background-color: #555;
+    background-color: #444;
     color: white;
     border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 0;
+    padding: 0.8rem 1rem;
+    margin: 0;
+    border-radius: 4px;
     cursor: pointer;
     text-decoration: none;
     display: block;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+    font-family: 'Arial', sans-serif;
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 5px;
 }
 
 .navbar-link:hover {
-    background-color: #777;
-    color: #ddd;
+    background-color: #555;
+    color: #ffcc00;
+    transform: scale(1.05);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 .navbar-logo:hover .dropdown-content {
     display: flex;
 }
 
+.navbar h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    flex-grow: 1;
+    text-align: right;
+}
+
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
         align-items: flex-start;
+        padding: 1rem;
+    }
+
+    .navbar h1 {
+        text-align: center;
+        font-size: 1.3rem;
+        margin-top: 1rem;
+        width: 100%;
     }
 
     .dropdown-content {
-        flex-direction: column;
+        position: static;
         width: 100%;
-        gap: 1rem;
+        box-shadow: none;
     }
 
     .navbar-link {
         width: 100%;
-        text-align: center;
+        padding: 0.5rem;
+    }
+
+    .hamburger-button {
+        align-self: flex-end;
     }
 }
 
 @media (max-width: 480px) {
     .navbar {
-        padding: 0.5rem 1rem;
+        padding: 0.5rem;
     }
 
-    .navbar-logo {
+    .navbar h1 {
         font-size: 1.2rem;
     }
 
     .navbar-link {
         padding: 0.5rem;
+        font-size: 0.9rem;
     }
 }
