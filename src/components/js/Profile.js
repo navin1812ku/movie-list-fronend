@@ -7,6 +7,7 @@ function Profile() {
 
     const [userDetails, setUserDetails] = useState({});
     const [movieListDetails, setMovieListDetails] = useState([]);
+    const [errorMessage, setErrorMessage] = useState('');
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -118,6 +119,11 @@ function Profile() {
                     </div>
                 ))}
             </div>
+            {errorMessage &&
+                <div>
+                    <h1 className="error-message">{errorMessage}</h1>
+                </div>
+            }
         </div>
     )
 }

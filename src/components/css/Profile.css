@@ -121,3 +121,8 @@
     justify-content: center;
     margin-bottom: 2rem;
 }
+
+.error-message{
+    text-align: center;
+    color: #fff;
+}
