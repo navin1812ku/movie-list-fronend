@@ -49,21 +49,19 @@ function LandingPage() {
             setIsAvailable(true);
         }
         else {
-            setErrorMessage(`No movie found with the name ${query}`)
+            setErrorMessage(`No movie found with the name ${query}`);
         }
         setSearchMessage(`Search results for "${query}"`);
     };
 
     const addMovieToList = async (id) => {
         console.log(id, query);
-        navigate(`/logined/addMovieToList/${id}/${query != '' ? query : "one piece"}`)
+        navigate(`/logined/addMovieToList/${id}/${query !== '' ? query : "one piece"}`)
     }
 
     return (
         <div className="landing-page">
-
             <form onSubmit={handleSearch} className="landing-page-search-form">
-
                 <input
                     type="text"
                     value={query}

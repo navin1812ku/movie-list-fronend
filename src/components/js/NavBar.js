@@ -1,5 +1,4 @@
-import { Link, Outlet, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { Link, Outlet } from "react-router-dom";
 import { useUserstate } from '../js/UserContext'
 import '../css/NavBar.css';
 

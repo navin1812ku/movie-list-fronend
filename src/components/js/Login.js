@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../css/Login.css'
 import { useUserstate } from '../js/UserContext'
 
@@ -65,7 +65,7 @@ function Login() {
                 />
                 <button type="submit" className="form-button">Login</button>
 
-                <span onClick={onRegister} class="psw">Don't have an account?.. <a href="#">Register Now</a></span>
+                <span onClick={onRegister} class="psw">Don't have an account?.. <Link to='/register'>Register now</Link></span>
 
             </form>
         </div>
