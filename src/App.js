@@ -12,8 +12,6 @@ import MovieList from './components/js/MoviList';
 import CreateMovieList from './components/js/CreateMovieList';
 import UserCanChangePassword from './components/js/UserCanChangePassword';
 import ChangePassword from './components/js/ChangePassword';
-import SearchMovieList from './components/js/SearchMovieList';
-import ViewMovieList from './components/js/ViewMovieList';
 function App() {
 
   return (
@@ -32,8 +30,6 @@ function App() {
           <Route path="/logined/createMovieList/:id/:query" element={<CreateMovieList/>}/>
           <Route path="/logined/canChangePassword" element={<UserCanChangePassword/>}/>
           <Route path="/logined/changePassword" element={<ChangePassword/>}/>
-          <Route path="/logined/searchMovieList" element={<SearchMovieList/>}/>
-          <Route path="/logined/viewMovieList/:id" element={<ViewMovieList/>}/>
           </Route>
         </Routes>
       </Router>
