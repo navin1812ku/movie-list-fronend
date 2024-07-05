@@ -11,11 +11,7 @@ function Login() {
     const { refreshOtherPages } = useUserstate();
     const [isTyping, setIsTyping] = useState(false);
     const navigate = useNavigate();
-
-    useEffect(() => {
-
-    }, []);
-
+    
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -64,9 +60,7 @@ function Login() {
                     required
                 />
                 <button type="submit" className="form-button">Login</button>
-
                 <span onClick={onRegister} class="psw">Don't have an account?.. <Link to='/register'>Register now</Link></span>
-
             </form>
         </div>
         </div>
