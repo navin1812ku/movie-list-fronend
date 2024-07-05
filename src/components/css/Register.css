@@ -20,9 +20,6 @@
     align-items: center;
     color: #fff;
 }
-.register-form.hover {
-    background-image: url("./assets/home.png");
-}
 
 .form-title {
     margin-bottom: 20px;
