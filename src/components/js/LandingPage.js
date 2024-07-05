@@ -2,12 +2,10 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import "../css/LandingPage.css"
 import { useNavigate, useParams } from 'react-router-dom';
-import { useUserstate } from '../js/UserContext';
 
 function LandingPage() {
     const { id } = useParams();
-    const {query,setQuery} =useUserstate();
-    const [searchQuery, setSearchQuery] = useState('');
+    const [query, setSearchQuery] = useState('');
     const [movies, setMovies] = useState([]);
     const [searchMessage, setSearchMessage] = useState('');
     const [isAvailable, setIsAvailable] = useState(false);
@@ -16,9 +14,12 @@ function LandingPage() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        const handleDefaultMovieList = async () => {
+        const handleDefaultMovieList = async (id) => {
             const token = localStorage.getItem('token');
-            const res = await axios.get(`https://movie-list-backend-api-1812.onrender.com/search/${query}`, {
+            if (id !== "one piece") {
+                setSearchQuery(id);
+            }
+            const res = await axios.get(`https://movie-list-backend-api-1812.onrender.com/search/${id}`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -33,11 +34,10 @@ function LandingPage() {
             }
         }
         handleDefaultMovieList(id);
-    }, [id,query])
+    }, [id, query])
 
     const handleSearch = async (e) => {
         e.preventDefault();
-        setQuery(searchQuery);
         const token = localStorage.getItem('token');
         const res = await axios.get(`https://movie-list-backend-api-1812.onrender.com/search/${query}`, {
             headers: {
@@ -49,15 +49,14 @@ function LandingPage() {
             setIsAvailable(true);
         }
         else {
-            setErrorMessage(`No movie found with the name ${searchQuery}`)
+            setErrorMessage(`No movie found with the name ${query}`);
         }
-        setSearchMessage(`Search results for "${searchQuery}"`);
+        setSearchMessage(`Search results for "${query}"`);
     };
 
     const addMovieToList = async (id) => {
-        console.log(id, searchQuery);
-        setQuery(query);
-        navigate(`/logined/addMovieToList/${id}/${query}`)
+        console.log(id, query);
+        navigate(`/logined/addMovieToList/${id}/${query !== '' ? query : "one piece"}`)
     }
 
     return (
@@ -65,7 +64,7 @@ function LandingPage() {
             <form onSubmit={handleSearch} className="landing-page-search-form">
                 <input
                     type="text"
-                    value={searchQuery}
+                    value={query}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder="Search movies..."
                     required

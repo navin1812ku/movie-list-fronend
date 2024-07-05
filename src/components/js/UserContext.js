@@ -11,18 +11,12 @@ export const UserProvider = ({ children }) => {
     return !!token; // Convert token presence to boolean
   });
 
-  const [query, setSearchQuery] = useState('');
-
-  const setQuery = (query) => {
-    setSearchQuery(query);
-  }
-
   const refreshOtherPages = () => {
     setLogegdIn(!isloggedIn)
   };
 
   return (
-    <UserContext.Provider value={{ isloggedIn, refreshOtherPages,query, setQuery }}>
+    <UserContext.Provider value={{ isloggedIn, refreshOtherPages }}>
       {children}
     </UserContext.Provider>
   );
