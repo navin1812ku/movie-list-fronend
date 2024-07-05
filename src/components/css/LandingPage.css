@@ -1,40 +1,76 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+@keyframes changeBackground {
+    0% { background-image: url("https://wallpapers.com/images/hd/animation-movies-3840-x-2160-wallpaper-f3ra0cyl5yhwfv8c.jpg"); }
+    20% { background-image:url("https://images2.alphacoders.com/131/1311525.jpeg") ; }
+    40% { background-image:url("https://wallpapers.com/images/hd/animation-movies-2560-x-1600-wallpaper-tul71djabv77cn8f.jpg") ; }
+    60% { background-image:url("https://wallpapers.com/images/hd/animation-movies-1197-x-704-wallpaper-nlgddr8e66de5g41.jpg") ; }
+    80% { background-image:url("https://wallpapers.com/images/hd/animation-movies-3840-x-2160-wallpaper-c3df9230sl47lv7f.jpg") ; }
+    100% { background-image: url("https://wallpapers.com/images/hd/animation-movies-3840-x-2160-wallpaper-c3df9230sl47lv7f.jpg"); }
+}
+
 .landing-page {
     padding: 20px;
+    background-color: #b6b6b6;
+    animation: changeBackground 30s infinite;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .landing-page-search-form {
     margin-bottom: 20px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.landing-page-search-form:hover {
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
 .landing-page-search-input {
     flex: 1;
-    padding: 10px;
-    margin-right: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    font-size: 16px;
 }
 
 .landing-page-search-button {
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
-    background-color: #007bff;
+    border-radius: 50px;
+    background-color: #9e3333;
     color: #fff;
     cursor: pointer;
+    font-size: 16px;
     transition: background-color 0.3s ease;
 }
 
 .landing-page-search-button:hover {
-    background-color: #0056b3;
+    background-color: #7a2727;
 }
 
 .landing-page-movies-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 10px;
+    gap: 20px;
+    width: 100%;
+    padding: 0 20px;
 }
 
 .landing-page-movie-card {
@@ -43,6 +79,12 @@
     border-radius: 5px;
     padding: 20px;
     background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.landing-page-movie-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
 }
 
 .landing-page-movie-poster {
@@ -53,10 +95,10 @@
 }
 
 .landing-page-movie-title {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    font-size: 15px;
-    text-align: left;
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
 }
 
 .landing-page-movie-year {
@@ -71,79 +113,16 @@
     padding: 5px 10px;
     border: none;
     border-radius: 5px;
-    background-color: #007bff;
+    background-color: #9e3333;
     color: #fff;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.landing-page-add-list-button:hover {
+    background-color: #7a2727;
 }
 
 .landing-page-lists-container {
     margin-top: 20px;
-}
-
-@media (max-width: 768px) {
-    .landing-page {
-        padding: 10px;
-    }
-
-    .landing-page-search-input {
-        padding: 8px;
-        margin-right: 5px;
-    }
-
-    .landing-page-search-button {
-        padding: 8px 16px;
-    }
-
-    .landing-page-movie-poster {
-        height: 200px;
-    }
-
-    .landing-page-movie-title {
-        font-size: 14px;
-    }
-
-    .landing-page-add-list-button {
-        bottom: 5px;
-        left: 5px;
-        padding: 4px 8px;
-    }
-}
-
-@media (max-width: 480px) {
-    .landing-page {
-        padding: 5px;
-    }
-
-    .landing-page-search-form {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .landing-page-search-input {
-        margin-bottom: 10px;
-        margin-right: 0;
-    }
-
-    .landing-page-search-button {
-        width: 100%;
-    }
-
-    .landing-page-movies-container {
-        grid-template-columns: 1fr;
-        gap: 5px;
-    }
-
-    .landing-page-movie-poster {
-        height: 150px;
-    }
-
-    .landing-page-movie-title {
-        font-size: 13px;
-    }
-
-    .landing-page-add-list-button {
-        bottom: 5px;
-        left: 5px;
-        padding: 3px 6px;
-    }
 }

@@ -24,13 +24,15 @@ function CreateMovieList() {
                     Authorization: `Bearer ${token}`,
                 },
             });
-            if (response.data.error) {
-                setErrorMessage(response.data.error);
+            console.log(response.data);
+            if (!response.data.success) {
+                setErrorMessage("Name already taken");
+                setTimeout(() => setErrorMessage(''), 2000);
             } else {
-                if (response.data.message === "Movie list created successfully") {
-                    setSuccessMessage(response.data.message);
+                if (response.data.success) {
+                    setSuccessMessage("Movie list created");
                     console.log(id);
-                    if (id === "id" && query === "profile") {
+                    if (id === "logined") {
                         setTimeout(() => {
                             navigate('/logined/profile');
                         }, 2000);
@@ -54,12 +56,12 @@ function CreateMovieList() {
         <div className="create-movie-list-container">
             <h1 className="create-movie-list-header">Create Movie List</h1>
             <form onSubmit={handleAdd}>
-                <div className="create-movie-list-form-group">
-                    <label className="create-movie-list-form-label" htmlFor="name">List Name</label>
+                <div className="form-group">
+                    <label className="form-label" htmlFor="name">List Name</label>
                     <input
                         type="text"
                         id="name"
-                        className="create-movie-list-form-input"
+                        className="form-input"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         onFocus={() => setIsTyping(true)}
@@ -67,18 +69,18 @@ function CreateMovieList() {
                         required
                     />
                 </div>
-                <div className="create-movie-list-form-group">
-                    <label className="create-movie-list-form-label">
+                <div className="form-group">
+                    <label className="form-label">
                         <input
                             type="checkbox"
-                            className="create-movie-list-form-checkbox"
+                            className="form-checkbox"
                             checked={isPublic}
                             onChange={(e) => setIsPublic(e.target.checked)}
                         />
                         Is Public
                     </label>
                 </div>
-                <button type="submit" className="create-movie-list-add-button">Add</button>
+                <button type="submit" className="add-button">Add</button>
                 {errorMessage && !isTyping && <div className="error-message">{errorMessage}</div>}
                 {successMessage && (
                     <div className="success-message">

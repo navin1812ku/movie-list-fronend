@@ -16,7 +16,7 @@ function LandingPage() {
     useEffect(() => {
         const handleDefaultMovieList = async (id) => {
             const token = localStorage.getItem('token');
-            if (id !== "one piece" && id!=="man") {
+            if (id !== "one piece") {
                 setSearchQuery(id);
             }
             const res = await axios.get(`https://movie-list-backend-api-1812.onrender.com/search/${id}`, {
@@ -24,8 +24,7 @@ function LandingPage() {
                     Authorization: `Bearer ${token}`
                 }
             });
-            if (!query && res.data.Search && res.data.Search.length !== 0) {
-                console.log("Default");
+            if (res.data.Search && res.data.Search.length !== 0) {
                 setMovies(res.data.Search);
                 setIsAvailable(false);
                 setIsDefaultMovieAvailable(true);
@@ -35,11 +34,10 @@ function LandingPage() {
             }
         }
         handleDefaultMovieList(id);
-    }, [id])
+    }, [])
 
     const handleSearch = async (e) => {
         e.preventDefault();
-        setMovies([]);
         const token = localStorage.getItem('token');
         const res = await axios.get(`https://movie-list-backend-api-1812.onrender.com/search/${query}`, {
             headers: {
@@ -47,10 +45,8 @@ function LandingPage() {
             }
         });
         if (res.data.Search && res.data.Search.length !== 0) {
-            console.log("after",res.data.Search);
             setMovies(res.data.Search);
             setIsAvailable(true);
-            setIsDefaultMovieAvailable(false);
         }
         else {
             setErrorMessage(`No movie found with the name ${query}`)
@@ -58,13 +54,16 @@ function LandingPage() {
         setSearchMessage(`Search results for "${query}"`);
     };
 
-    const addMovieToList = async (id, query) => {
-        navigate(`/logined/addMovieToList/${id}/${query}`)
+    const addMovieToList = async (id) => {
+        console.log(id, query);
+        navigate(`/logined/addMovieToList/${id}/${query != '' ? query : "one piece"}`)
     }
 
     return (
         <div className="landing-page">
+
             <form onSubmit={handleSearch} className="landing-page-search-form">
+
                 <input
                     type="text"
                     value={query}
@@ -83,15 +82,15 @@ function LandingPage() {
                         <img src={movie.Poster} alt={movie.Title} className="landing-page-movie-poster" />
                         <h4 className="landing-page-movie-title">{movie.Title}</h4>
                         <p className="landing-page-movie-year">{movie.Year}</p>
-                        <button className="landing-page-add-list-button" onClick={() => addMovieToList(movie.imdbID, "one piece")}>Add to List</button>
+                        <button className="landing-page-add-list-button" onClick={() => addMovieToList(movie.imdbID)}>Add to List</button>
                     </div>
                 ))}
-                {!isDefaulMovieAvailable && isAvailable && movies.map((movie) => (
+                {isAvailable && movies.map((movie) => (
                     <div key={movie.imdbID} className="landing-page-movie-card">
                         <img src={movie.Poster} alt={movie.Title} className="landing-page-movie-poster" />
                         <h4 className="landing-page-movie-title">{movie.Title}</h4>
                         <p className="landing-page-movie-year">{movie.Year}</p>
-                        <button className="landing-page-add-list-button" onClick={() => addMovieToList(movie.imdbID, query)}>Add to List</button>
+                        <button className="landing-page-add-list-button" onClick={() => addMovieToList(movie.imdbID)}>Add to List</button>
                     </div>
                 ))}
             </div>

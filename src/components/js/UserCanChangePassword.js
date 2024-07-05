@@ -32,6 +32,7 @@ function UserCanChangePassword() {
     };
 
     return (
+        <div className="demo">
         <div className="can-password-change-container">
             <h1 className="can-password-change-header">Change Password</h1>
             <form onSubmit={handleCheckPassword}>
@@ -48,8 +49,9 @@ function UserCanChangePassword() {
                 </div>
                 <button type="submit" className="can-password-change-check-button">Check</button>
             </form>
-            {errorMessage && <div className="error-message">{errorMessage}</div>}
+            {errorMessage && <div className="can-password-change-error-message">{errorMessage}</div>}
         </div>
+      </div>
     );
 }
 

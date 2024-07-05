@@ -1,122 +1,43 @@
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
-    padding: 1rem 2rem;
-    background-color: #333;
+    padding: 2rem 3rem;
+    background-color: #0e4161d0;
     color: white;
-    position: relative;
+    margin: auto;
 }
 
-.navbar-logo {
-    position: relative;
-    cursor: pointer;
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    height: 30px;
+    margin-right: 870px;
+    color: aliceblue;
+    text-decoration: none;
 }
 
-.hamburger-button {
+.navbar-links {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 20px;
-    cursor: pointer;
+    justify-content: flex-end;
+    gap: 10rem;
 }
 
-.hamburger-button .line {
-    width: 100%;
-    height: 3px;
-    background-color: white;
-}
-
-.dropdown-content {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #333;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    min-width: 200px;
-    z-index: 1;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-}
 
 .navbar-link {
-    background-color: #444;
     color: white;
     border: none;
-    padding: 0.8rem 1rem;
-    margin: 0;
-    border-radius: 4px;
+    padding: 0.7rem 1rem;
+    margin: 0.9rem;
+    border-radius: 1rem;
     cursor: pointer;
+    align-items: center;
     text-decoration: none;
-    display: block;
-    transition: background-color 0.3s, color 0.3s, transform 0.3s;
-    font-family: 'Arial', sans-serif;
-    font-size: 1rem;
-    text-align: center;
-    margin-bottom: 5px;
+    transition: background-color 0.3s ease;
 }
 
-.navbar-link:hover {
-    background-color: #555;
-    color: #ffcc00;
-    transform: scale(1.05);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
 
-.navbar-logo:hover .dropdown-content {
-    display: flex;
-}
-
-.navbar h1 {
-    margin: 0;
-    font-size: 1.5rem;
-    text-align: right;
-}
-
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: row-reverse;
-        justify-content: space-between;
-        padding: 1rem;
-    }
-
-    .navbar h1 {
-        font-size: 1.3rem;
-        margin-top: 1rem;
-        text-align: right;
-    }
-
-    .dropdown-content {
-        position: static;
-        width: 100%;
-        box-shadow: none;
-    }
-
-    .navbar-link {
-        width: 100%;
-        padding: 0.5rem;
-    }
-
-    .hamburger-button {
-        align-self: flex-end;
-    }
-}
-
-@media (max-width: 480px) {
-    .navbar {
-        padding: 0.5rem;
-    }
-
-    .navbar h1 {
-        font-size: 1.2rem;
-    }
-
-    .navbar-link {
-        padding: 0.5rem;
-        font-size: 0.9rem;
-    }
+.navbar-link:hover,
+.navbar-brand:hover {
+    color: rgb(242, 63, 63);
 }

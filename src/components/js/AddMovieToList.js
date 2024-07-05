@@ -5,7 +5,7 @@ import '../css/AddMovieToList.css';
 import { useNavigate } from 'react-router-dom';
 
 function AddMovieToList() {
-    const { id,query } = useParams();
+    const { id, query } = useParams();
     const [movieLists, setMovieLists] = useState([]);
     const [movieListId, setSelectedList] = useState('');
     const [successMessage, setSuccessMessage] = useState('');
@@ -42,6 +42,7 @@ function AddMovieToList() {
             console.log(list);
             setSuccessMessage('Movie added to list successfully!');
             setTimeout(() => {
+                console.log(query);
                 navigate(`/logined/landingPage/${query}`);
             }, 2000);
         } catch (error) {
@@ -49,21 +50,21 @@ function AddMovieToList() {
         }
     };
 
-    const handleCreatMovieList= async(id)=>{
-        navigate(`/logined/createMovieList/${id}/${query}`);
+    const handleCreatMovieList = async (id) => {
+        navigate(`/${id}/createMovieList/${query}`);
     }
 
     return (
         <div className="add-movie-to-list">
             <h2>Add Movie to List</h2>
             <p>Movie ID: {id}</p>
-            <div className="add-movie-to-list-form-group">
+            <div className="form-group">
                 <label htmlFor="movieList">Select List:</label>
                 <select
-                    id="add-movie-to-list-movieList"
+                    id="movieList"
                     value={movieListId}
                     onChange={(e) => setSelectedList(e.target.value)}
-                    className="add-movie-to-list-select-input"
+                    className="select-input"
                 >
                     <option value="">Select a list</option>
                     {movieLists.map((list) => (
@@ -73,8 +74,8 @@ function AddMovieToList() {
                     ))}
                 </select>
             </div>
-            <button onClick={handleAddMovie} className="add-movie-to-list-add-button">Add</button><br></br>
-            <button onClick={()=>handleCreatMovieList(id)} className="add-movie-to-list-add-button">Create new list</button>
+            <button onClick={handleAddMovie} className="add-button">Add</button><br></br>
+            <button onClick={() => handleCreatMovieList(id)} className="add-button">Create new list</button>
             {successMessage && (
                 <div className="success-message">
                     <span className="tick-symbol">&#10004;</span>

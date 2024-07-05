@@ -19,7 +19,7 @@ function ChangePassword() {
         }
         try {
             const token = localStorage.getItem('token');
-            const response=await axios.post('https://movie-list-backend-api-1812.onrender.com/userChangePasssword', {
+            const response = await axios.post('https://movie-list-backend-api-1812.onrender.com/userChangePasssword', {
                 newPassword
             }, {
                 headers: {
@@ -35,7 +35,7 @@ function ChangePassword() {
                         navigate('/logined/profile');
                     }, 2000);
                 }
-                else{
+                else {
                     setErrorMessage(response.data.message);
                 }
             }
@@ -57,7 +57,7 @@ function ChangePassword() {
                         className="form-input"
                         value={newPassword}
                         onChange={(e) => setNewPassword(e.target.value)}
-                        onFocus={() => setIsTyping(true)} 
+                        onFocus={() => setIsTyping(true)}
                         onBlur={() => setIsTyping(false)}
                         required
                     />
@@ -70,7 +70,7 @@ function ChangePassword() {
                         className="form-input"
                         value={repeatPassword}
                         onChange={(e) => setRepeatPassword(e.target.value)}
-                        onFocus={() => setIsTyping(true)} 
+                        onFocus={() => setIsTyping(true)}
                         onBlur={() => setIsTyping(false)}
                         required
                     />
@@ -78,12 +78,12 @@ function ChangePassword() {
                 <button type="submit" className="change-button">Change</button>
             </form>
             {errorMessage && !isTyping && <div className="error-message">{errorMessage}</div>}
-                {successMessage && (
-                    <div className="success-message">
-                        <span className="tick-symbol">&#10004;</span>
-                        {successMessage}
-                    </div>
-                )}
+            {successMessage && (
+                <div className="success-message">
+                    <span className="tick-symbol">&#10004;</span>
+                    {successMessage}
+                </div>
+            )}
         </div>
     );
 }

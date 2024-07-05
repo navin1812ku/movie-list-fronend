@@ -1,139 +1,123 @@
 .profile-container {
+    padding: 3rem;
+    background: linear-gradient(135deg, #4e4e7a, hsla(240, 86%, 36%, 0.393));
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
-    background-color: #f0f0f0;
-    min-height: 100vh;
 }
 
 .profile-header {
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: #333;
+    text-align: center;
+    color: #fffcfc;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 .profile-user-details {
     display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+    width: 100%;
 }
 
-.user-card {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
+.profile-user-card {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 2rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
     text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.profile-user-card:hover {
+    transform: translateY(-10px);
 }
 
 .profile-user-title {
-    font-size: 1.2em;
-    margin: 5px 0;
-    color: #555;
+    margin: 1rem 0;
+    color: #1b1010;
+    font-size: 1.5rem;
+    font-weight: 500;
 }
 
-.profile-create-list-button-container {
-    margin-bottom: 20px;
+.profile-user-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
 }
 
+.profile-movie-lists-header {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.profile-movies-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 100px;
+    width: 100%;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.profile-movies {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+}
+
+.profile-movies:hover {
+    transform: translateY(-10px);
+}
+
+.profile-movie-title {
+    margin: 1rem 0;
+    color: #2c3e50;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.profile-view-more-button,
 .profile-create-list-button {
     background-color: #007bff;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 0.75rem 1.5rem;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 1rem;
+    font-size: 1rem;
 }
 
+.profile-view-more-button:hover,
 .profile-create-list-button:hover {
     background-color: #0056b3;
+    transform: translateY(-2px);
 }
 
-.profile-movie-lists-header {
-    font-size: 1.5em;
-    margin: 20px 0;
-    color: #333;
-}
-
-.profile-movies-container {
-    display: flex;
-    flex-wrap: wrap;
+.profile-create-list-button-container {
+    display: grid;
     justify-content: center;
-    gap: 20px;
-}
-
-.profile-movies {
-    background-color: #fff;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 250px;
-    text-align: center;
-}
-
-.profile-movie-title {
-    font-size: 1.2em;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.profile-view-morw-button {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 5px;
-    transition: background-color 0.3s ease;
-    font-size: 0.9em;
-}
-
-.profile-view-morw-button:hover {
-    background-color: #218838;
-}
-
-.profile-view-morw-button:last-child {
-    background-color: #dc3545;
-}
-
-.profile-view-morw-button:last-child:hover {
-    background-color: #c82333;
-}
-
-@media (max-width: 768px) {
-    .profile-header, .profile-movie-lists-header {
-        font-size: 1.5em;
-    }
-    
-    .profile-user-title {
-        font-size: 1em;
-    }
-
-    .profile-movies {
-        width: 100%;
-        max-width: 300px;
-    }
-
-    .profile-create-list-button, .profile-view-morw-button {
-        padding: 8px 16px;
-        font-size: 0.8em;
-    }
-}
-
-@media (max-width: 480px) {
-    .profile-container {
-        padding: 10px;
-    }
-
-    .user-card {
-        padding: 10px;
-    }
-
-    .profile-create-list-button-container, .profile-movies-container {
-        gap: 10px;
-    }
+    margin-bottom: 2rem;
 }
