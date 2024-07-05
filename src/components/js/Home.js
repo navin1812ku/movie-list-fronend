@@ -9,7 +9,7 @@ const Home = () => {
             <div className='background'>
                 <div className='home-card'>
                     <div class="home-image">
-                        <image src="https://tint.creativemarket.com/ml4wuv0Bx6YYkTxNvEmgKLbMouTwX_WIH4suYxjTJdc/width:3000/height:1873/gravity:nowe/rt:fill-down/el:1/czM6Ly9maWxlcy5jcmVhdGl2ZW1hcmtldC5jb20vaW1hZ2VzL3NjcmVlbnNob3RzL3Byb2R1Y3RzLzc1MS83NTExLzc1MTExMjAvNzgwLW8uanBn" alt="Home Image" />
+                        <img src="https://tint.creativemarket.com/ml4wuv0Bx6YYkTxNvEmgKLbMouTwX_WIH4suYxjTJdc/width:3000/height:1873/gravity:nowe/rt:fill-down/el:1/czM6Ly9maWxlcy5jcmVhdGl2ZW1hcmtldC5jb20vaW1hZ2VzL3NjcmVlbnNob3RzL3Byb2R1Y3RzLzc1MS83NTExLzc1MTExMjAvNzgwLW8uanBn" alt="Home Image" />
                     </div>
                     <div className="home-container">
                         <h1>Welcome to Our Website!</h1>

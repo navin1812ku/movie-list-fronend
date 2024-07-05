@@ -8,7 +8,6 @@ function NavBar() {
     return (
         <div>
             <nav className="navbar">
-
                 <div className="nav-links">
                     <Link to="/" className="navbar-brand">
                         FLIM FETCH
