@@ -67,7 +67,7 @@ function AddMovieToList() {
                     className="select-input"
                 >
                     <option value="">Select a list</option>
-                    {movieLists.map((list) => (
+                    {movieLists && movieLists.map((list) => (
                         <option key={list._id} value={list._id}>
                             {list.name}
                         </option>

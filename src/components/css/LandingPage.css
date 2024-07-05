@@ -126,3 +126,7 @@ body {
 .landing-page-lists-container {
     margin-top: 20px;
 }
+
+.landing-page-search-message{
+    color: #fff;
+}
