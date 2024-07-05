@@ -34,7 +34,7 @@ function LandingPage() {
             }
         }
         handleDefaultMovieList(id);
-    }, [id, query])
+    }, [])
 
     const handleSearch = async (e) => {
         e.preventDefault();
