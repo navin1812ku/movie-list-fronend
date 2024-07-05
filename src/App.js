@@ -12,27 +12,30 @@ import MovieList from './components/js/MoviList';
 import CreateMovieList from './components/js/CreateMovieList';
 import UserCanChangePassword from './components/js/UserCanChangePassword';
 import ChangePassword from './components/js/ChangePassword';
+import {UserProvider} from './components/js/UserContext';
 function App() {
 
   return (
     <div className="App">
+      <UserProvider>
       <Router>
         <Routes>
+          <Route path="/" element={<NavBar/>}>
           <Route path="/" element={<Home />}/>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/logined" element={<NavBar/>}>
-          <Route path="/logined/landingPage/:id" element={<LandingPage />} />
-          <Route path="/logined/addMovieToList/:id/:query" element={<AddMovieToList />} />
-          <Route path="/logined/profile" element={<Profile />} />
-          <Route path="/logined/logout" element={<Logout/>}/>
-          <Route path="/logined/movieList/:id" element={<MovieList/>}/>
-          <Route path="/logined/createMovieList/:id/:query" element={<CreateMovieList/>}/>
-          <Route path="/logined/canChangePassword" element={<UserCanChangePassword/>}/>
-          <Route path="/logined/changePassword" element={<ChangePassword/>}/>
+          <Route path="/:id/landingPage/:id" element={<LandingPage />} />
+          <Route path="/:id/addMovieToList/:id/:query" element={<AddMovieToList />} />
+          <Route path="/:id/profile" element={<Profile />} />
+          <Route path="/:id/logout" element={<Logout/>}/>
+          <Route path="/:id/movieList/:id" element={<MovieList/>}/>
+          <Route path="/:id/createMovieList/:query" element={<CreateMovieList/>}/>
+          <Route path="/:id/canChangePassword" element={<UserCanChangePassword/>}/>
+          <Route path="/:id/changePassword" element={<ChangePassword/>}/>
           </Route>
         </Routes>
       </Router>
+      </UserProvider>
     </div>
   );
 }
