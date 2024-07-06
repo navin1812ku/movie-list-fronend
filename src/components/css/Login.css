@@ -1,4 +1,4 @@
-.login{
+.login {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,6 +32,7 @@
     font-weight: 300;
     color: black;
 }
+
 .form-title {
     margin-bottom: 20px;
     font-size: 24px;
@@ -41,7 +42,7 @@
 .form-input:focus {
     border-color: #007bff;
     outline: none;
-    
+
 }
 
 .form-button {
@@ -56,9 +57,149 @@
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s;
-    
+
 }
 
 .form-button:hover {
     background-color: #0056b3;
+}
+
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 30%;
+    height: 56%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.login-form {
+    background-color: rgb(28, 151, 149);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 330px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+}
+
+.form-input {
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.10);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+    color: black;
+}
+
+.form-title {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.form-input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.form-button {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #007bff;
+    border: none;
+    max-width: 130px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .login {
+        width: 50%;
+        height: 60%;
+    }
+
+    .login-form {
+        padding: 15px;
+    }
+
+    .form-title {
+        font-size: 22px;
+    }
+
+    .form-input {
+        height: 45px;
+        font-size: 13px;
+    }
+
+    .form-button {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .login {
+        width: 70%;
+        height: 70%;
+    }
+
+    .login-form {
+        padding: 10px;
+    }
+
+    .form-title {
+        font-size: 20px;
+    }
+
+    .form-input {
+        height: 40px;
+        font-size: 12px;
+    }
+
+    .form-button {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .login {
+        width: 90%;
+        height: 80%;
+    }
+
+    .login-form {
+        padding: 8px;
+    }
+
+    .form-title {
+        font-size: 18px;
+    }
+
+    .form-input {
+        height: 35px;
+        font-size: 12px;
+    }
+
+    .form-button {
+        font-size: 13px;
+    }
 }
