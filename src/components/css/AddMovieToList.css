@@ -63,11 +63,11 @@
     background-color: #0056b3;
 }
 
-/* Responsive Styles */
 @media (max-width: 768px) {
     .add-movie-to-list {
-        width: 50%;
+        width: 90%;
         margin-top: 20%;
+        padding: 20px;
     }
 
     .add-movie-to-list h2 {
@@ -88,8 +88,9 @@
 
 @media (max-width: 480px) {
     .add-movie-to-list {
-        width: 50%;
+        width: 90%;
         margin-top: 20%;
+        padding: 15px;
     }
 
     .add-movie-to-list h2 {
