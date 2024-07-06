@@ -8,7 +8,7 @@
     margin: 50px auto;
     margin-top: 13%;
     display: flex;
-    border-style:initial;
+    border-style: initial;
     flex-direction: column;
     align-items: center;
 }
@@ -61,4 +61,49 @@
 
 .add-button:hover {
     background-color: #0056b3;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .add-movie-to-list {
+        padding: 30px;
+        margin-top: 10%;
+    }
+
+    .add-movie-to-list h2 {
+        font-size: 22px;
+    }
+
+    .add-movie-to-list p {
+        font-size: 14px;
+    }
+
+    .select-input,
+    .checkbox-input,
+    .add-button {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .add-movie-to-list {
+        padding: 20px;
+        margin-top: 5%;
+    }
+
+    .add-movie-to-list h2 {
+        font-size: 20px;
+    }
+
+    .add-movie-to-list p {
+        font-size: 12px;
+    }
+
+    .select-input,
+    .checkbox-input,
+    .add-button {
+        padding: 6px;
+        font-size: 12px;
+    }
 }
