@@ -1,17 +1,10 @@
+/* LandingPage.css */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f0f0f0;
-}
-
-@keyframes changeBackground {
-    0% { background-image: url("https://wallpapers.com/images/hd/animation-movies-3840-x-2160-wallpaper-f3ra0cyl5yhwfv8c.jpg"); }
-    20% { background-image:url("https://images2.alphacoders.com/131/1311525.jpeg") ; }
-    40% { background-image:url("https://wallpapers.com/images/hd/animation-movies-2560-x-1600-wallpaper-tul71djabv77cn8f.jpg") ; }
-    60% { background-image:url("https://wallpapers.com/images/hd/animation-movies-1197-x-704-wallpaper-nlgddr8e66de5g41.jpg") ; }
-    80% { background-image:url("https://wallpapers.com/images/hd/animation-movies-3840-x-2160-wallpaper-c3df9230sl47lv7f.jpg") ; }
-    100% { background-image: url("https://wallpapers.com/images/hd/animation-movies-3840-x-2160-wallpaper-c3df9230sl47lv7f.jpg"); }
 }
 
 .landing-page {
@@ -22,6 +15,15 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+@keyframes changeBackground {
+    0% { background-image: url("https://wallpapers.com/images/hd/animation-movies-3840-x-2160-wallpaper-f3ra0cyl5yhwfv8c.jpg"); }
+    20% { background-image:url("https://images2.alphacoders.com/131/1311525.jpeg"); }
+    40% { background-image:url("https://wallpapers.com/images/hd/animation-movies-2560-x-1600-wallpaper-tul71djabv77cn8f.jpg"); }
+    60% { background-image:url("https://wallpapers.com/images/hd/animation-movies-1197-x-704-wallpaper-nlgddr8e66de5g41.jpg"); }
+    80% { background-image:url("https://wallpapers.com/images/hd/animation-movies-3840-x-2160-wallpaper-c3df9230sl47lv7f.jpg"); }
+    100% { background-image: url("https://wallpapers.com/images/hd/animation-movies-3840-x-2160-wallpaper-c3df9230sl47lv7f.jpg"); }
 }
 
 .landing-page-search-form {
@@ -127,6 +129,99 @@ body {
     margin-top: 20px;
 }
 
-.landing-page-search-message{
+.landing-page-search-message {
     color: #fff;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .landing-page-search-form {
+        max-width: 90%;
+    }
+
+    .landing-page-movie-poster {
+        height: 200px;
+    }
+
+    .landing-page-movie-title {
+        font-size: 16px;
+    }
+
+    .landing-page-movie-year {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .landing-page-search-form {
+        padding: 8px;
+    }
+
+    .landing-page-search-input {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .landing-page-search-button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .landing-page-movie-poster {
+        height: 180px;
+    }
+
+    .landing-page-movie-title {
+        font-size: 14px;
+    }
+
+    .landing-page-movie-year {
+        font-size: 12px;
+    }
+
+    .landing-page-add-list-button {
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .landing-page-search-form {
+        flex-direction: column;
+        padding: 6px;
+    }
+
+    .landing-page-search-input {
+        padding: 6px 12px;
+        font-size: 12px;
+        margin-bottom: 10px;
+        border-radius: 20px;
+    }
+
+    .landing-page-search-button {
+        padding: 6px 12px;
+        font-size: 12px;
+        border-radius: 20px;
+    }
+
+    .landing-page-movie-poster {
+        height: 150px;
+    }
+
+    .landing-page-movie-title {
+        font-size: 12px;
+    }
+
+    .landing-page-movie-year {
+        font-size: 10px;
+    }
+
+    .landing-page-add-list-button {
+        padding: 3px 6px;
+        font-size: 10px;
+    }
+
+    .landing-page-lists-container {
+        margin-top: 10px;
+    }
 }
