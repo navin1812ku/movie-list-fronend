@@ -19,7 +19,7 @@ function NavBar() {
         <div>
             <nav className="navbar">
                 <div className="navbar-brand">
-                    <Link className='navbar-title' to="/">FLIM FETCH</Link>
+                    <Link className='navbar-title' to="/">FILM FETCH</Link>
                 </div>
                 <button className="menu-toggle" onClick={toggleDropdown}>
                     <div className={`bar ${dropdownOpen ? 'open' : ''}`}></div>
